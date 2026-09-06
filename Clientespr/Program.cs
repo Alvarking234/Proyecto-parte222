@@ -1,3 +1,4 @@
+
 ﻿public class PaqueteEstandar : Paquete
 {
     public PaqueteEstandar(int codigo, string descripcion, double peso,
@@ -17,5 +18,6 @@
     {
         Console.WriteLine("Tipo: Paquete estándar");
         base.MostrarInformacion();
+
     }
 }
