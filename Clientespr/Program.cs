@@ -1,11 +1,12 @@
-﻿public class Cliente
+﻿public class Vehiculo
 {
     private int codigo;
-    private string nombre;
-    private string telefono;
-    private string correo;
-    private string direccion;
-    private int solicitudes;
+    private string placa;
+    private string marca;
+    private string modelo;
+    private double capacidad;
+    private string estado;
+    private double costoOperativo;
 
     public int Codigo
     {
@@ -13,60 +14,73 @@
         set { codigo = value; }
     }
 
-    public string Nombre
+    public string Placa
     {
-        get { return nombre; }
-        set { nombre = value; }
+        get { return placa; }
+        set { placa = value; }
     }
 
-    public string Telefono
+    public string Marca
     {
-        get { return telefono; }
-        set { telefono = value; }
+        get { return marca; }
+        set { marca = value; }
     }
 
-    public string Correo
+    public string Modelo
     {
-        get { return correo; }
-        set { correo = value; }
+        get { return modelo; }
+        set { modelo = value; }
     }
 
-    public string Direccion
+    public double Capacidad
     {
-        get { return direccion; }
-        set { direccion = value; }
+        get { return capacidad; }
+        set { capacidad = value; }
     }
 
-    public int Solicitudes
+    public string Estado
     {
-        get { return solicitudes; }
-        set { solicitudes = value; }
+        get { return estado; }
+        set { estado = value; }
     }
 
-    public Cliente()
+    public double CostoOperativo
     {
-        solicitudes = 0;
+        get { return costoOperativo; }
+        set { costoOperativo = value; }
     }
 
-    public Cliente(int codigo, string nombre, string telefono,
-                   string correo, string direccion)
+    public Vehiculo()
+    {
+        estado = "Disponible";
+    }
+
+    public Vehiculo(int codigo, string placa, string marca,
+                    string modelo, double capacidad,
+                    double costoOperativo)
     {
         this.codigo = codigo;
-        this.nombre = nombre;
-        this.telefono = telefono;
-        this.correo = correo;
-        this.direccion = direccion;
-        this.solicitudes = 0;
+        this.placa = placa;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.capacidad = capacidad;
+        this.costoOperativo = costoOperativo;
+        estado = "Disponible";
     }
 
-    public void MostrarInformacion()
+    public virtual bool PuedeTransportar(double peso)
+    {
+        return peso <= capacidad;
+    }
+
+    public virtual void MostrarInformacion()
     {
         Console.WriteLine("Código: " + Codigo);
-        Console.WriteLine("Nombre: " + Nombre);
-        Console.WriteLine("Teléfono: " + Telefono);
-        Console.WriteLine("Correo: " + Correo);
-        Console.WriteLine("Dirección: " + Direccion);
-        Console.WriteLine("Solicitudes: " + Solicitudes);
+        Console.WriteLine("Placa: " + Placa);
+        Console.WriteLine("Marca: " + Marca);
+        Console.WriteLine("Modelo: " + Modelo);
+        Console.WriteLine("Capacidad: " + Capacidad + " kg");
+        Console.WriteLine("Estado: " + Estado);
+        Console.WriteLine("Costo operativo + CostoOperativo);
     }
-}
 }
