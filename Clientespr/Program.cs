@@ -1,23 +1,21 @@
-
-﻿public class PaqueteEstandar : Paquete
+public class PaqueteFragil : Paquete
 {
-    public PaqueteEstandar(int codigo, string descripcion, double peso,
-                           double valorDeclarado, string direccionOrigen,
-                           string direccionDestino)
+    public PaqueteFragil(int codigo, string descripcion, double peso,
+                         double valorDeclarado, string direccionOrigen,
+                         string direccionDestino)
         : base(codigo, descripcion, peso, valorDeclarado,
-               direccionOrigen, direccionDestino, "Paquete estándar")
+               direccionOrigen, direccionDestino, "Paquete frágil")
     {
     }
 
     public override double CalcularTarifa(double distancia)
     {
-        return 25 + (distancia * 4) + (Peso * 2);
+        return 35 + (distancia * 5) + (Peso * 3);
     }
 
     public override void MostrarInformacion()
     {
-        Console.WriteLine("Tipo: Paquete estándar");
+        Console.WriteLine("Tipo: Paquete frágil");
         base.MostrarInformacion();
-
     }
 }
