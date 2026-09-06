@@ -1,11 +1,13 @@
-﻿public class Cliente
+﻿public class Paquete
 {
     private int codigo;
-    private string nombre;
-    private string telefono;
-    private string correo;
-    private string direccion;
-    private int solicitudes;
+    private string descripcion;
+    private double peso;
+    private double valorDeclarado;
+    private string direccionOrigen;
+    private string direccionDestino;
+    private string estado;
+    private string tipo;
 
     public int Codigo
     {
@@ -13,60 +15,81 @@
         set { codigo = value; }
     }
 
-    public string Nombre
+    public string Descripcion
     {
-        get { return nombre; }
-        set { nombre = value; }
+        get { return descripcion; }
+        set { descripcion = value; }
     }
 
-    public string Telefono
+    public double Peso
     {
-        get { return telefono; }
-        set { telefono = value; }
+        get { return peso; }
+        set { peso = value; }
     }
 
-    public string Correo
+    public double ValorDeclarado
     {
-        get { return correo; }
-        set { correo = value; }
+        get { return valorDeclarado; }
+        set { valorDeclarado = value; }
     }
 
-    public string Direccion
+    public string DireccionOrigen
     {
-        get { return direccion; }
-        set { direccion = value; }
+        get { return direccionOrigen; }
+        set { direccionOrigen = value; }
     }
 
-    public int Solicitudes
+    public string DireccionDestino
     {
-        get { return solicitudes; }
-        set { solicitudes = value; }
+        get { return direccionDestino; }
+        set { direccionDestino = value; }
     }
 
-    public Cliente()
+    public string Estado
     {
-        solicitudes = 0;
+        get { return estado; }
+        set { estado = value; }
     }
 
-    public Cliente(int codigo, string nombre, string telefono,
-                   string correo, string direccion)
+    public string Tipo
+    {
+        get { return tipo; }
+        set { tipo = value; }
+    }
+
+    public Paquete()
+    {
+        estado = "Disponible";
+    }
+
+    public Paquete(int codigo, string descripcion, double peso,
+                   double valorDeclarado, string direccionOrigen,
+                   string direccionDestino, string tipo)
     {
         this.codigo = codigo;
-        this.nombre = nombre;
-        this.telefono = telefono;
-        this.correo = correo;
-        this.direccion = direccion;
-        this.solicitudes = 0;
+        this.descripcion = descripcion;
+        this.peso = peso;
+        this.valorDeclarado = valorDeclarado;
+        this.direccionOrigen = direccionOrigen;
+        this.direccionDestino = direccionDestino;
+        this.tipo = tipo;
+        estado = "Disponible";
     }
 
-    public void MostrarInformacion()
+    public virtual double CalcularTarifa(double distancia)
+    {
+        return distancia * 5;
+    }
+
+    public virtual void MostrarInformacion()
     {
         Console.WriteLine("Código: " + Codigo);
-        Console.WriteLine("Nombre: " + Nombre);
-        Console.WriteLine("Teléfono: " + Telefono);
-        Console.WriteLine("Correo: " + Correo);
-        Console.WriteLine("Dirección: " + Direccion);
-        Console.WriteLine("Solicitudes: " + Solicitudes);
+        Console.WriteLine("Descripción: " + Descripcion);
+        Console.WriteLine("Peso: " + Peso + " kg");
+        Console.WriteLine("Valor declarado: Q" + ValorDeclarado);
+        Console.WriteLine("Origen: " + DireccionOrigen);
+        Console.WriteLine("Destino: " + DireccionDestino);
+        Console.WriteLine("Estado: " + Estado);
+        Console.WriteLine("Tipo: " + Tipo);
     }
-}
 }
