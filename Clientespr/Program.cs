@@ -1,3 +1,4 @@
+
 ﻿public class Paquete
 {
     private int codigo;
@@ -91,5 +92,7 @@
         Console.WriteLine("Destino: " + DireccionDestino);
         Console.WriteLine("Estado: " + Estado);
         Console.WriteLine("Tipo: " + Tipo);
+
+
     }
 }
