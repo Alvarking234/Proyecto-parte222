@@ -1,11 +1,12 @@
-﻿public class Cliente
+﻿public class Repartidor
 {
     private int codigo;
     private string nombre;
     private string telefono;
-    private string correo;
-    private string direccion;
-    private int solicitudes;
+    private string licencia;
+    private string estado;
+    private int entregasRealizadas;
+    private double calificacion;
 
     public int Codigo
     {
@@ -25,38 +26,47 @@
         set { telefono = value; }
     }
 
-    public string Correo
+    public string Licencia
     {
-        get { return correo; }
-        set { correo = value; }
+        get { return licencia; }
+        set { licencia = value; }
     }
 
-    public string Direccion
+    public string Estado
     {
-        get { return direccion; }
-        set { direccion = value; }
+        get { return estado; }
+        set { estado = value; }
     }
 
-    public int Solicitudes
+    public int EntregasRealizadas
     {
-        get { return solicitudes; }
-        set { solicitudes = value; }
+        get { return entregasRealizadas; }
+        set { entregasRealizadas = value; }
     }
 
-    public Cliente()
+    public double Calificacion
     {
-        solicitudes = 0;
+        get { return calificacion; }
+        set { calificacion = value; }
     }
 
-    public Cliente(int codigo, string nombre, string telefono,
-                   string correo, string direccion)
+    public Repartidor()
+    {
+        estado = "Disponible";
+        entregasRealizadas = 0;
+        calificacion = 0;
+    }
+
+    public Repartidor(int codigo, string nombre, string telefono,
+                      string licencia)
     {
         this.codigo = codigo;
         this.nombre = nombre;
         this.telefono = telefono;
-        this.correo = correo;
-        this.direccion = direccion;
-        this.solicitudes = 0;
+        this.licencia = licencia;
+        estado = "Disponible";
+        entregasRealizadas = 0;
+        calificacion = 0;
     }
 
     public void MostrarInformacion()
@@ -64,9 +74,9 @@
         Console.WriteLine("Código: " + Codigo);
         Console.WriteLine("Nombre: " + Nombre);
         Console.WriteLine("Teléfono: " + Telefono);
-        Console.WriteLine("Correo: " + Correo);
-        Console.WriteLine("Dirección: " + Direccion);
-        Console.WriteLine("Solicitudes: " + Solicitudes);
+        Console.WriteLine("Licencia: " + Licencia);
+        Console.WriteLine("Estado: " + Estado);
+        Console.WriteLine("Entregas realizadas: " + EntregasRealizadas);
+        Console.WriteLine("Calificación: " + Calificacion);
     }
-}
 }
