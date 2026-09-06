@@ -1,3 +1,4 @@
+
 ﻿public class Motocicleta : Vehiculo
 {
     public Motocicleta(int codigo, string placa, string marca,
@@ -16,5 +17,7 @@
     {
         Console.WriteLine("Tipo: Motocicleta");
         base.MostrarInformacion();
+
+
     }
 }
