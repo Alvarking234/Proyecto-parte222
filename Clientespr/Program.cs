@@ -1,72 +1,21 @@
-﻿public class Cliente
+﻿public class Documento : Paquete
 {
-    private int codigo;
-    private string nombre;
-    private string telefono;
-    private string correo;
-    private string direccion;
-    private int solicitudes;
-
-    public int Codigo
+    public Documento(int codigo, string descripcion, double peso,
+                     double valorDeclarado, string direccionOrigen,
+                     string direccionDestino)
+        : base(codigo, descripcion, peso, valorDeclarado,
+               direccionOrigen, direccionDestino, "Documento")
     {
-        get { return codigo; }
-        set { codigo = value; }
     }
 
-    public string Nombre
+    public override double CalcularTarifa(double distancia)
     {
-        get { return nombre; }
-        set { nombre = value; }
+        return 20 + (distancia * 3);
     }
 
-    public string Telefono
+    public override void MostrarInformacion()
     {
-        get { return telefono; }
-        set { telefono = value; }
+        Console.WriteLine("Tipo: Documento");
+        base.MostrarInformacion();
     }
-
-    public string Correo
-    {
-        get { return correo; }
-        set { correo = value; }
-    }
-
-    public string Direccion
-    {
-        get { return direccion; }
-        set { direccion = value; }
-    }
-
-    public int Solicitudes
-    {
-        get { return solicitudes; }
-        set { solicitudes = value; }
-    }
-
-    public Cliente()
-    {
-        solicitudes = 0;
-    }
-
-    public Cliente(int codigo, string nombre, string telefono,
-                   string correo, string direccion)
-    {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.telefono = telefono;
-        this.correo = correo;
-        this.direccion = direccion;
-        this.solicitudes = 0;
-    }
-
-    public void MostrarInformacion()
-    {
-        Console.WriteLine("Código: " + Codigo);
-        Console.WriteLine("Nombre: " + Nombre);
-        Console.WriteLine("Teléfono: " + Telefono);
-        Console.WriteLine("Correo: " + Correo);
-        Console.WriteLine("Dirección: " + Direccion);
-        Console.WriteLine("Solicitudes: " + Solicitudes);
-    }
-}
 }
