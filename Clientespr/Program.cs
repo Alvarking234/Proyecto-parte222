@@ -1,9 +1,10 @@
 
-﻿public class Bicicleta : Vehiculo
+﻿public class Motocicleta : Vehiculo
 {
-    public Bicicleta(int codigo, string marca, string modelo,
-                     double capacidad, double costoOperativo)
-        : base(codigo, "", marca, modelo, capacidad, costoOperativo)
+    public Motocicleta(int codigo, string placa, string marca,
+                       string modelo, double capacidad,
+                       double costoOperativo)
+        : base(codigo, placa, marca, modelo, capacidad, costoOperativo)
     {
     }
 
@@ -14,9 +15,8 @@
 
     public override void MostrarInformacion()
     {
-        Console.WriteLine("Tipo: Bicicleta");
+        Console.WriteLine("Tipo: Motocicleta");
         base.MostrarInformacion();
-
 
 
     }
