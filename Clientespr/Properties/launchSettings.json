@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Clientespr": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
