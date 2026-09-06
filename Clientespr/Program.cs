@@ -1,3 +1,4 @@
+
 ﻿public class Documento : Paquete
 {
     public Documento(int codigo, string descripcion, double peso,
@@ -17,5 +18,7 @@
     {
         Console.WriteLine("Tipo: Documento");
         base.MostrarInformacion();
+
+
     }
 }
