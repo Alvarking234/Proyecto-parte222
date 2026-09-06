@@ -1,4 +1,4 @@
-﻿public class PaqueteFragil : Paquete
+public class PaqueteFragil : Paquete
 {
     public PaqueteFragil(int codigo, string descripcion, double peso,
                          double valorDeclarado, string direccionOrigen,
